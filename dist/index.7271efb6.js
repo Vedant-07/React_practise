@@ -5738,8 +5738,49 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 const Body = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "Body"
-    }, void 0, false, {
+        className: "py-4 bg-blue-200",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex py-6 justify-center space-x-3",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        className: "w-1/4 p-2 border focus:border-blue-400 transition  rounded-lg -mx-11 h-10",
+                        type: "text",
+                        name: "",
+                        placeholder: "  Search for  your restuarenst here",
+                        id: ""
+                    }, void 0, false, {
+                        fileName: "src/Body.js",
+                        lineNumber: 7,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "",
+                        children: "\uD83D\uDD0D"
+                    }, void 0, false, {
+                        fileName: "src/Body.js",
+                        lineNumber: 8,
+                        columnNumber: 8
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Body.js",
+                lineNumber: 6,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                style: {
+                    height: "64vh"
+                },
+                className: "h-4/6",
+                children: "Shimmer here for now........."
+            }, void 0, false, {
+                fileName: "src/Body.js",
+                lineNumber: 13,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/Body.js",
         lineNumber: 5,
         columnNumber: 5
@@ -5937,8 +5978,100 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 const Footer = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "Footer"
-    }, void 0, false, {
+        className: " bg-gray-900 text-white px-5 flex space-x-32",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        "support Links?",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "here 1"
+                        }, void 0, false, {
+                            fileName: "src/Footer.js",
+                            lineNumber: 9,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "here 2"
+                        }, void 0, false, {
+                            fileName: "src/Footer.js",
+                            lineNumber: 10,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Footer.js",
+                    lineNumber: 8,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Footer.js",
+                lineNumber: 7,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        "other things",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "here 1"
+                        }, void 0, false, {
+                            fileName: "src/Footer.js",
+                            lineNumber: 15,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "here 2"
+                        }, void 0, false, {
+                            fileName: "src/Footer.js",
+                            lineNumber: 16,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Footer.js",
+                    lineNumber: 14,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Footer.js",
+                lineNumber: 13,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        "still other support Links?",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "here 1"
+                        }, void 0, false, {
+                            fileName: "src/Footer.js",
+                            lineNumber: 21,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "here 2"
+                        }, void 0, false, {
+                            fileName: "src/Footer.js",
+                            lineNumber: 22,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Footer.js",
+                    lineNumber: 20,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Footer.js",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/Footer.js",
         lineNumber: 5,
         columnNumber: 5
@@ -5966,14 +6099,59 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _eatOutPng = require("../utilities/img/eat_out.png");
+var _eatOutPngDefault = parcelHelpers.interopDefault(_eatOutPng);
 const Head = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "Head"
-    }, void 0, false, {
-        fileName: "src/Head.js",
-        lineNumber: 5,
-        columnNumber: 5
-    }, undefined);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "flex px-4 bg-slate-900 text-white justify-between ",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: (0, _eatOutPngDefault.default),
+                    alt: "eat out",
+                    className: "h-16 p-3"
+                }, void 0, false, {
+                    fileName: "src/Head.js",
+                    lineNumber: 7,
+                    columnNumber: 5
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "flex py-3 my-2  space-x-3",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            children: "Contact us"
+                        }, void 0, false, {
+                            fileName: "src/Head.js",
+                            lineNumber: 10,
+                            columnNumber: 5
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            children: "Items 0"
+                        }, void 0, false, {
+                            fileName: "src/Head.js",
+                            lineNumber: 11,
+                            columnNumber: 5
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            children: "Sign in"
+                        }, void 0, false, {
+                            fileName: "src/Head.js",
+                            lineNumber: 13,
+                            columnNumber: 5
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Head.js",
+                    lineNumber: 8,
+                    columnNumber: 5
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Head.js",
+            lineNumber: 6,
+            columnNumber: 5
+        }, undefined)
+    }, void 0, false);
 };
 _c = Head;
 exports.default = Head;
@@ -5985,7 +6163,45 @@ $RefreshReg$(_c, "Head");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lOjBx":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utilities/img/eat_out.png":"T9j3X"}],"T9j3X":[function(require,module,exports) {
+module.exports = require("a139be4f4fdf6622").getBundleURL("aXMci") + "eat_out.8d65afe4.png" + "?" + Date.now();
+
+},{"a139be4f4fdf6622":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"lOjBx":[function(require,module,exports) {
 "use strict";
 var m = require("aaccff5d309d9239");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
