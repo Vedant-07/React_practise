@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className=' bg-gray-900 text-white px-5 flex space-x-32'>
+    <div className=' bg-gray-900 text-white py-4 px-5 flex space-x-32'>
       
       <div className=''>
         <ul>support Links?

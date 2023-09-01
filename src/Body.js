@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ResContainer from './ResContainer'
 const Body = () => {
   return (
     <div  className='py-4 bg-blue-200'>
@@ -10,8 +10,8 @@ const Body = () => {
 
 
       
-        <div style={{height:'64vh'}} className="h-4/6">
-      Shimmer here for now.........
+        <div  className="">
+         <ResContainer/>
         </div>
       
     </div>
