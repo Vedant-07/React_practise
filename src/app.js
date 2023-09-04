@@ -1,17 +1,40 @@
 import React from 'react'
 import ReactDOM  from 'react-dom/client'
-import Body from './Body'
-import Footer from './Footer'
-import Head from './Head'
 
+import {Link,Outlet,createBrowserRouter,RouterProvider} from "react-router-dom"
+import Head from './Head'
+import Footer from './Footer'
+import Body from './Body'
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path:'',
+      element:(
+      <>
+      <Head/>
+      <Outlet/>
+      <Footer/>
+      </>
+      ),
+      children:[
+        {
+          path:'body',
+          element:<Body/>
+        }
+      ]
+    }
+  ])
+
+
   return (
     <>
-    <Head/>
+    {/* <Head/>
     <Body/>
-    <Footer/>
+    <Footer/> */}
+    <RouterProvider router={router}/>
     </>
   )
+  
 }
 /**
  * <Main Page>
@@ -26,9 +49,10 @@ const App = () => {
  *  rest-container
  *      rest. card
  *          img
- *          name
+ *          name of rest.
  *          ratings
- *          kms/min away from you
+ *          cuisines
+ *          place
  * Footer
  *  various links
  *  Copyright

@@ -27,7 +27,9 @@ const ResContainer = () => {
   },[])
 
   return(
+    
     <div className='flex flex-wrap justify-evenly'>
+      
          { isLoading ? <ShimmerRestCard/>: (restaurant && (
           Array(10).fill(0).map((e)=>{
             return(
