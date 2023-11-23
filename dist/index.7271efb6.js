@@ -33628,41 +33628,41 @@ const Body = ()=>{
                 className: "flex py-6 justify-center space-x-3",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        className: "w-1/4 p-2 border focus:border-blue-400 transition  rounded-lg -mx-11 h-10",
+                        className: "w-1/2 md:w-1/4 p-2 border focus:border-blue-400 transition rounded-lg md:rounded-lg h-10",
                         type: "text",
                         name: "",
-                        placeholder: "  Search for  your restuarenst here",
+                        placeholder: "Search for your restaurant here",
                         id: ""
                     }, void 0, false, {
                         fileName: "src/Components/Body.js",
-                        lineNumber: 7,
-                        columnNumber: 7
+                        lineNumber: 17,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "",
-                        children: "\uD83D\uDD0D"
+                        className: "bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg h-10",
+                        children: "Search"
                     }, void 0, false, {
                         fileName: "src/Components/Body.js",
-                        lineNumber: 8,
-                        columnNumber: 8
+                        lineNumber: 24,
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/Body.js",
-                lineNumber: 6,
+                lineNumber: 16,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resContainerDefault.default), {}, void 0, false, {
                     fileName: "src/Components/Body.js",
-                    lineNumber: 13,
-                    columnNumber: 10
+                    lineNumber: 30,
+                    columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Components/Body.js",
-                lineNumber: 12,
-                columnNumber: 9
+                lineNumber: 29,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
@@ -33698,15 +33698,16 @@ var _resCardDefault = parcelHelpers.interopDefault(_resCard);
 var _shimmer = require("./Shimmer");
 var _s = $RefreshSig$();
 /*
-*here shimmerrestcard is still a component even though a named import
-*/ const ResContainer = ()=>{
+ *here shimmerrestcard is still a component even though a named import
+ */ const ResContainer = ()=>{
     _s();
     const [restaurant, setRestaurant] = (0, _react.useState)({});
     const [isLoading, setIsLoading] = (0, _react.useState)(true);
     (0, _react.useEffect)(()=>{
         try {
             fetching_data = async ()=>{
-                const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId=342643");
+                //search for restaurant_grid_listing
+                const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.3071588&lng=73.1812187&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
                 const json = await data.json();
                 console.log(json);
                 setRestaurant(json);
@@ -33722,17 +33723,18 @@ var _s = $RefreshSig$();
         children: isLoading ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmer.ShimmerRestCard), {}, void 0, false, {
             fileName: "src/Components/ResContainer.js",
             lineNumber: 33,
-            columnNumber: 24
-        }, undefined) : restaurant && Array(10).fill(0).map((e)=>{
+            columnNumber: 9
+        }, undefined) : restaurant?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants.map((e)=>{
             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resCardDefault.default), {
-                name: restaurant.data.cards[0].card.card.info.name,
-                id: restaurant.data.cards[0].card.card.info.id,
-                rating: restaurant.data.cards[0].card.card.info.avgRating,
-                cuisines: restaurant.data.cards[0].card.card.info.cuisines,
-                place: restaurant.data.cards[0].card.card.info.locality
+                id: e.info.id,
+                name: e.info.name,
+                rating: e.info.avgRating,
+                place: e.info.areaName,
+                cuisines: e.info.cuisines,
+                imgId: e.info.cloudinaryImageId
             }, void 0, false, {
                 fileName: "src/Components/ResContainer.js",
-                lineNumber: 36,
+                lineNumber: 38,
                 columnNumber: 15
             }, undefined);
         })
@@ -33742,9 +33744,95 @@ var _s = $RefreshSig$();
         columnNumber: 5
     }, undefined);
 };
-_s(ResContainer, "/np2myd5BvdFDyLV1823hDx6IGw=");
+_s(ResContainer, "8gea2e4XnHBObIeb6vR/tVU1H20=");
 _c = ResContainer;
-exports.default = ResContainer;
+exports.default = ResContainer; /**
+ * here to fill recards
+ * Array(10)
+          .fill(0)
+          .map((e) => {
+            return (
+              <ResCard
+                name={
+                  restaurant?.data?.cards[5]?.card?.card?.gridElements
+                    ?.infoWithStyle?.restaurants[1]?.info?.name
+                }
+                id={
+                  restaurant?.data?.cards[5]?.card?.card?.gridElements
+                    ?.infoWithStyle?.restaurants[1]?.info?.id
+                }
+                rating={
+                  restaurant?.data?.cards[5]?.card?.card?.gridElements
+                    ?.infoWithStyle?.restaurants[1]?.info?.avgRating
+                }
+                cuisines={
+                  restaurant?.data?.cards[5]?.card?.card?.gridElements
+                    ?.infoWithStyle?.restaurants[1]?.info?.cuisines
+                }
+                image={
+                  restaurant?.data?.cards[5]?.card?.card?.gridElements
+                    ?.infoWithStyle?.restaurants[1]?.info?.cloudinaryImageId
+                }
+                place={
+                  restaurant?.data?.cards[5]?.card?.card?.gridElements
+                    ?.infoWithStyle?.restaurants[1]?.info?.areaName
+                }
+                 id={restaurant.data.cards[0].card.card.info.id}
+                rating={restaurant.data.cards[0].card.card.info.avgRating}
+                cuisines={restaurant.data.cards[0].card.card.info.cuisines}
+                place={restaurant.data.cards[0].card.card.info.locality} 
+                />
+ */  //to check whther api working or not
+ /****
+ * 
+        console.log("Data:", json);
+
+        if (json?.data) {
+          console.log("Cards:", json.data.cards);
+
+          const cardAtIndex5 = json.data.cards[5];
+          console.log("Card at index 5:", cardAtIndex5);
+
+          if (cardAtIndex5?.card) {
+            const nestedCard = cardAtIndex5.card;
+            console.log("Nested Card:", nestedCard);
+
+            if (nestedCard?.card?.gridElements) {
+              console.log("Grid Elements:", nestedCard.card.gridElements);
+
+              const infoWithStyle = nestedCard.card.gridElements.infoWithStyle;
+              console.log("Info With Style:", infoWithStyle);
+
+              if (infoWithStyle?.restaurants) {
+                console.log("Restaurants Array:", infoWithStyle.restaurants);
+
+                const restaurantAtIndex1 = infoWithStyle.restaurants[1];
+                console.log("Restaurant at Index 1:", restaurantAtIndex1);
+
+                if (restaurantAtIndex1?.info) {
+                  const restaurantInfo = restaurantAtIndex1.info;
+                  console.log("Restaurant Info:", restaurantInfo);
+
+                  console.log("Restaurant Name:", restaurantInfo.name);
+                } else {
+                  console.log(
+                    "Info property in restaurantAtIndex1 is missing or undefined"
+                  );
+                }
+              } else {
+                console.log("Restaurants array is missing or undefined");
+              }
+            } else {
+              console.log("Grid Elements are missing or undefined");
+            }
+          } else {
+            console.log("Nested card is missing or undefined");
+          }
+        } else {
+          console.log("Data property is missing or undefined");
+        }
+      };
+ */ 
 var _c;
 $RefreshReg$(_c, "ResContainer");
 
@@ -33765,66 +33853,62 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-const ResCard = ({ name, id, rating, cuisines, place })=>{
+const ResCard = ({ name, rating, cuisines, place, imgId })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "m-5 rounded-lg p-5 h-56 w-56   bg-white",
+        className: "m-5 bg-white shadow-md rounded-lg flex flex-col w-80",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: " object-cover w-full h-1/2  ",
-                src: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/0335dd45be555d0a4187255e57d2ca88"
+                className: "object-cover w-full h-40 rounded-t-lg",
+                src: `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${imgId}`,
+                alt: "Food"
             }, void 0, false, {
                 fileName: "src/Components/ResCard.js",
                 lineNumber: 6,
-                columnNumber: 10
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "p-4 flex flex-col",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        className: "text-xl ",
+                        className: "text-xl font-semibold mb-2 truncate",
                         children: name
                     }, void 0, false, {
                         fileName: "src/Components/ResCard.js",
-                        lineNumber: 8,
-                        columnNumber: 10
+                        lineNumber: 12,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         className: "text-sm",
                         children: [
-                            "⭐  ",
+                            "⭐ ",
                             rating
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/ResCard.js",
-                        lineNumber: 9,
-                        columnNumber: 10
+                        lineNumber: 13,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-sm",
-                        children: [
-                            "Cuisines ",
-                            cuisines.join(", ")
-                        ]
-                    }, void 0, true, {
+                        className: "text-sm mt-1 truncate",
+                        children: cuisines.join(",")
+                    }, void 0, false, {
                         fileName: "src/Components/ResCard.js",
-                        lineNumber: 10,
-                        columnNumber: 10
+                        lineNumber: 14,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-sm",
-                        children: [
-                            "Place ",
-                            place
-                        ]
-                    }, void 0, true, {
+                        className: "text-sm truncate",
+                        children: place
+                    }, void 0, false, {
                         fileName: "src/Components/ResCard.js",
-                        lineNumber: 11,
-                        columnNumber: 10
+                        lineNumber: 15,
+                        columnNumber: 9
                     }, undefined)
                 ]
-            }, id, true, {
+            }, void 0, true, {
                 fileName: "src/Components/ResCard.js",
-                lineNumber: 7,
-                columnNumber: 10
+                lineNumber: 11,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
@@ -33856,12 +33940,12 @@ parcelHelpers.export(exports, "ShimmerRestCard", ()=>ShimmerRestCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const ShimmerRestCard = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: Array(10).fill(0).map((e)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: Array(10).fill(0).map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "m-5  rounded-lg p-5 h-56 w-56  animate-pulse  bg-white"
-            }, void 0, false, {
+            }, index, false, {
                 fileName: "src/Components/Shimmer.js",
-                lineNumber: 8,
-                columnNumber: 17
+                lineNumber: 7,
+                columnNumber: 11
             }, undefined))
     }, void 0, false);
 };

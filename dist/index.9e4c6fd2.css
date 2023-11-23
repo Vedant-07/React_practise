@@ -241,33 +241,8 @@ img, video {
   --tw-backdrop-sepia: ;
 }
 
-.fixed {
-  position: fixed;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
-}
-
-.inset-x-0 {
-  left: 0;
-  right: 0;
-}
-
-.bottom-0 {
-  bottom: 0;
-}
-
 .m-5 {
   margin: 1.25rem;
-}
-
-.m-auto {
-  margin: auto;
 }
 
 .-mx-11 {
@@ -284,12 +259,38 @@ img, video {
   margin-top: auto;
 }
 
-.box-border {
-  box-sizing: border-box;
+.mt-1 {
+  margin-top: .25rem;
+}
+
+.mt-3 {
+  margin-top: .75rem;
+}
+
+.mb-2 {
+  margin-bottom: .5rem;
+}
+
+.line-clamp-1 {
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
 }
 
 .flex {
   display: flex;
+}
+
+.aspect-auto {
+  aspect-ratio: auto;
 }
 
 .h-1\/2 {
@@ -308,40 +309,28 @@ img, video {
   height: 14rem;
 }
 
-.h-4\/6 {
-  height: 66.6667%;
-}
-
 .h-full {
   height: 100%;
-}
-
-.h-96 {
-  height: 24rem;
 }
 
 .h-screen {
   height: 100vh;
 }
 
-.h-2\/3 {
-  height: 66.6667%;
+.h-1\/6 {
+  height: 16.6667%;
 }
 
-.h-3\/5 {
-  height: 60%;
+.h-40 {
+  height: 10rem;
 }
 
-.h-3\/4 {
-  height: 75%;
+.h-80 {
+  height: 20rem;
 }
 
-.h-auto {
-  height: auto;
-}
-
-.min-h-full {
-  min-height: 100%;
+.h-36 {
+  height: 9rem;
 }
 
 .w-1\/4 {
@@ -354,6 +343,18 @@ img, video {
 
 .w-full {
   width: 100%;
+}
+
+.w-1\/6 {
+  width: 16.6667%;
+}
+
+.w-80 {
+  width: 20rem;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .flex-grow {
@@ -402,12 +403,45 @@ img, video {
   margin-left: calc(8rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
 
 .rounded-lg {
   border-radius: .5rem;
+}
+
+.rounded-t-lg {
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+
+.rounded-l-lg {
+  border-top-left-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+}
+
+.rounded-r-lg {
+  border-top-right-radius: .5rem;
+  border-bottom-right-radius: .5rem;
 }
 
 .border {
@@ -424,6 +458,11 @@ img, video {
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
+.bg-slate-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+
 .bg-slate-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
@@ -434,9 +473,9 @@ img, video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-slate-400 {
+.bg-blue-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .object-cover {
@@ -455,8 +494,8 @@ img, video {
   padding: 1.25rem;
 }
 
-.p-0 {
-  padding: 0;
+.p-4 {
+  padding: 1rem;
 }
 
 .px-4 {
@@ -484,6 +523,11 @@ img, video {
   padding-bottom: 1.5rem;
 }
 
+.py-2 {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
 .text-sm {
   font-size: .875rem;
   line-height: 1.25rem;
@@ -494,9 +538,19 @@ img, video {
   line-height: 1.75rem;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .transition {
@@ -505,9 +559,34 @@ img, video {
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
 
+.hover\:bg-blue-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
 .focus\:border-blue-400:focus {
   --tw-border-opacity: 1;
   border-color: rgb(96 165 250 / var(--tw-border-opacity));
+}
+
+@media (width >= 768px) {
+  .md\:h-48 {
+    height: 12rem;
+  }
+
+  .md\:w-1\/4 {
+    width: 25%;
+  }
+
+  .md\:rounded-lg {
+    border-radius: .5rem;
+  }
+}
+
+@media (width >= 1024px) {
+  .lg\:h-56 {
+    height: 14rem;
+  }
 }
 
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
