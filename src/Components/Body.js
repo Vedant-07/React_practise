@@ -8,10 +8,10 @@ const Body = () => {
        <button className=''>🔍</button>
       </div>
 
-       {/*  {(alert("im body"))} */}      
+           
         <div  className="">
          <ResContainer/>
-        </div>
+        </div> 
       
     </div>
   )
