@@ -1,13 +1,82 @@
+// ResContainer.js
+import React, { useEffect, useState } from "react";
+import ResCard from "./ResCard";
+import { ShimmerRestCard } from "./Shimmer";
+
+const ResContainer = ({ search }) => {
+  const [restaurants, setRestaurants] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+
+  useEffect(() => {
+    // Fetch restaurant data
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.3071588&lng=73.1812187&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        );
+        const data = await response.json();
+        setRestaurants(
+          data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants || []
+        );
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    // Filter restaurants based on search text
+    if (search.trim() === "") {
+      setFilteredRestaurants(restaurants);
+    } else {
+      const filtered = restaurants.filter((restaurant) =>
+        restaurant?.info?.name.toLowerCase().includes(search.toLowerCase())
+      );
+      setFilteredRestaurants(filtered);
+    }
+  }, [search, restaurants]);
+
+  return (
+    <div className="flex flex-wrap justify-evenly">
+      {isLoading ? (
+        <ShimmerRestCard />
+      ) : (
+        filteredRestaurants.map((restaurant) => (
+          <ResCard
+            key={restaurant.info.id}
+            id={restaurant.info.id}
+            name={restaurant.info.name}
+            rating={restaurant.info.avgRating}
+            place={restaurant.info.areaName}
+            cuisines={restaurant.info.cuisines}
+            imgId={restaurant.info.cloudinaryImageId}
+          />
+        ))
+      )}
+    </div>
+  );
+};
+
+export default ResContainer;
+
+/*
+
+here did eveything before searching fetue implemtation 
 import React, { useEffect, useState } from "react";
 import ResCard from "./ResCard";
 import { ShimmerRestCard } from "./Shimmer";
 /*
  *here shimmerrestcard is still a component even though a named import
- */
-const ResContainer = () => {
+ 
+const ResContainer = ({ search }) => {
   const [restaurant, setRestaurant] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
+  const [filterRest,setFilterRest]=useState({});
   useEffect(() => {
     try {
       fetching_data = async () => {
@@ -20,6 +89,7 @@ const ResContainer = () => {
         console.log(json);
         setRestaurant(json);
         setIsLoading(false);
+        setFilterRest(json);
       };
     } catch (error) {
       console.error(" error is : ", error);
@@ -51,7 +121,7 @@ const ResContainer = () => {
   );
 };
 
-export default ResContainer;
+export default ResContainer; */
 
 /**
  * here to fill recards

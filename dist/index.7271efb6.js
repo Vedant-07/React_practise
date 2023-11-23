@@ -33613,6 +33613,7 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$4f14.prelude(module);
 
 try {
+// Body.js
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
@@ -33620,8 +33621,15 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _resContainer = require("./ResContainer");
 var _resContainerDefault = parcelHelpers.interopDefault(_resContainer);
+var _s = $RefreshSig$();
 const Body = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    _s();
+    const [searchText, setSearchText] = (0, _react.useState)("");
+    /* const handleSearch = () => {
+    // Filter the restaurants based on the search text
+    // Perform any filtering logic here before updating searchText state
+    console.log("Search Text:", searchText);
+  }; */ return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "py-4 bg-blue-200",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -33630,9 +33638,8 @@ const Body = ()=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                         className: "w-1/2 md:w-1/4 p-2 border focus:border-blue-400 transition rounded-lg md:rounded-lg h-10",
                         type: "text",
-                        name: "",
                         placeholder: "Search for your restaurant here",
-                        id: ""
+                        onChange: (e)=>setSearchText(e.target.value)
                     }, void 0, false, {
                         fileName: "src/Components/Body.js",
                         lineNumber: 17,
@@ -33643,7 +33650,7 @@ const Body = ()=>{
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/Components/Body.js",
-                        lineNumber: 24,
+                        lineNumber: 23,
                         columnNumber: 9
                     }, undefined)
                 ]
@@ -33654,25 +33661,69 @@ const Body = ()=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resContainerDefault.default), {}, void 0, false, {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resContainerDefault.default), {
+                    search: searchText
+                }, void 0, false, {
                     fileName: "src/Components/Body.js",
-                    lineNumber: 30,
+                    lineNumber: 33,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Components/Body.js",
-                lineNumber: 29,
+                lineNumber: 31,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/Body.js",
-        lineNumber: 5,
+        lineNumber: 15,
         columnNumber: 5
     }, undefined);
 };
+_s(Body, "OAGvOw28fBJQW7HtXCjc9nvla2M=");
 _c = Body;
-exports.default = Body;
+exports.default = Body; /* import React, { useState } from "react";
+import ResContainer from "./ResContainer";
+const Body = () => {
+  const [searchText, setSearchText] = useState("");
+
+  return (
+    <div className="py-4 bg-blue-200">
+      {/*<div className="flex py-6 justify-center space-x-3">
+        <input
+          className="w-1/4 p-2 border focus:border-blue-400 transition  rounded-lg -mx-11 h-10"
+          type="text"
+          name=""
+          placeholder="  Search for  your restaurant here"
+          id=""
+        />
+        <button className="">🔍</button>
+          }
+      <div className="flex py-6 justify-center space-x-3">
+        <input
+          className="w-1/2 md:w-1/4 p-2 border focus:border-blue-400 transition rounded-lg md:rounded-lg h-10"
+          type="text"
+          placeholder="Search for your restaurant here"
+          onChange={(e) => {
+            setSearchText(e);
+          }}
+        />
+        <button
+          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg h-10"
+          onClick={(e) => filterRest()}
+        >
+          Search
+        </button>
+      </div>
+
+      <div className="">
+        <ResContainer seach={searchText} />
+      </div>
+    </div>
+  );
+};
+
+export default Body; */ 
 var _c;
 $RefreshReg$(_c, "Body");
 
@@ -33688,6 +33739,7 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$75c7.prelude(module);
 
 try {
+// ResContainer.js
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
@@ -33697,56 +33749,120 @@ var _resCard = require("./ResCard");
 var _resCardDefault = parcelHelpers.interopDefault(_resCard);
 var _shimmer = require("./Shimmer");
 var _s = $RefreshSig$();
-/*
- *here shimmerrestcard is still a component even though a named import
- */ const ResContainer = ()=>{
+const ResContainer = ({ search })=>{
     _s();
-    const [restaurant, setRestaurant] = (0, _react.useState)({});
+    const [restaurants, setRestaurants] = (0, _react.useState)([]);
     const [isLoading, setIsLoading] = (0, _react.useState)(true);
+    const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
     (0, _react.useEffect)(()=>{
-        try {
-            fetching_data = async ()=>{
-                //search for restaurant_grid_listing
-                const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.3071588&lng=73.1812187&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-                const json = await data.json();
-                console.log(json);
-                setRestaurant(json);
+        // Fetch restaurant data
+        const fetchData = async ()=>{
+            try {
+                const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.3071588&lng=73.1812187&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+                const data = await response.json();
+                setRestaurants(data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants || []);
                 setIsLoading(false);
-            };
-        } catch (error) {
-            console.error(" error is : ", error);
-        }
-        fetching_data();
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+        fetchData();
     }, []);
+    (0, _react.useEffect)(()=>{
+        // Filter restaurants based on search text
+        if (search.trim() === "") setFilteredRestaurants(restaurants);
+        else {
+            const filtered = restaurants.filter((restaurant)=>restaurant?.info?.name.toLowerCase().includes(search.toLowerCase()));
+            setFilteredRestaurants(filtered);
+        }
+    }, [
+        search,
+        restaurants
+    ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex flex-wrap justify-evenly",
         children: isLoading ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmer.ShimmerRestCard), {}, void 0, false, {
             fileName: "src/Components/ResContainer.js",
-            lineNumber: 33,
+            lineNumber: 47,
             columnNumber: 9
-        }, undefined) : restaurant?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants.map((e)=>{
-            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resCardDefault.default), {
-                id: e.info.id,
-                name: e.info.name,
-                rating: e.info.avgRating,
-                place: e.info.areaName,
-                cuisines: e.info.cuisines,
-                imgId: e.info.cloudinaryImageId
-            }, void 0, false, {
+        }, undefined) : filteredRestaurants.map((restaurant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resCardDefault.default), {
+                id: restaurant.info.id,
+                name: restaurant.info.name,
+                rating: restaurant.info.avgRating,
+                place: restaurant.info.areaName,
+                cuisines: restaurant.info.cuisines,
+                imgId: restaurant.info.cloudinaryImageId
+            }, restaurant.info.id, false, {
                 fileName: "src/Components/ResContainer.js",
-                lineNumber: 38,
-                columnNumber: 15
-            }, undefined);
-        })
+                lineNumber: 50,
+                columnNumber: 11
+            }, undefined))
     }, void 0, false, {
         fileName: "src/Components/ResContainer.js",
-        lineNumber: 31,
+        lineNumber: 45,
         columnNumber: 5
     }, undefined);
 };
-_s(ResContainer, "8gea2e4XnHBObIeb6vR/tVU1H20=");
+_s(ResContainer, "KD4o6tKiH+lRrYxF1Zd1BREFORo=");
 _c = ResContainer;
-exports.default = ResContainer; /**
+exports.default = ResContainer; /*
+
+here did eveything before searching fetue implemtation 
+import React, { useEffect, useState } from "react";
+import ResCard from "./ResCard";
+import { ShimmerRestCard } from "./Shimmer";
+/*
+ *here shimmerrestcard is still a component even though a named import
+ 
+const ResContainer = ({ search }) => {
+  const [restaurant, setRestaurant] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const [filterRest,setFilterRest]=useState({});
+  useEffect(() => {
+    try {
+      fetching_data = async () => {
+        //search for restaurant_grid_listing
+
+        const data = await fetch(
+          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.3071588&lng=73.1812187&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        );
+        const json = await data.json();
+        console.log(json);
+        setRestaurant(json);
+        setIsLoading(false);
+        setFilterRest(json);
+      };
+    } catch (error) {
+      console.error(" error is : ", error);
+    }
+    fetching_data();
+  }, []);
+
+  return (
+    <div className="flex flex-wrap justify-evenly">
+      {isLoading ? (
+        <ShimmerRestCard />
+      ) : (
+        restaurant?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants.map(
+          (e) => {
+            return (
+              <ResCard
+                id={e.info.id}
+                name={e.info.name}
+                rating={e.info.avgRating}
+                place={e.info.areaName}
+                cuisines={e.info.cuisines}
+                imgId={e.info.cloudinaryImageId}
+              />
+            );
+          }
+        )
+      )}
+    </div>
+  );
+};
+
+export default ResContainer; */  /**
  * here to fill recards
  * Array(10)
           .fill(0)
