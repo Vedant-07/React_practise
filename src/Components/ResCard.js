@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ResCard = ({ name, rating, cuisines, place, imgId }) => {
+const ResCard = ({ id, name, rating, cuisines, place, imgId }) => {
   return (
     <div className="m-5 bg-white shadow-md rounded-lg flex flex-col w-80">
       <img
@@ -13,6 +14,7 @@ const ResCard = ({ name, rating, cuisines, place, imgId }) => {
         <span className="text-sm">⭐ {rating}</span>
         <p className="text-sm mt-1 truncate">{cuisines.join(",")}</p>
         <p className="text-sm truncate">{place}</p>
+        <Link to="/">Click here</Link>
       </div>
     </div>
   );

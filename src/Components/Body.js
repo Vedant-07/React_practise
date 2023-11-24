@@ -20,12 +20,12 @@ const Body = () => {
           placeholder="Search for your restaurant here"
           onChange={(e) => setSearchText(e.target.value)}
         />
-        <button
+        {/* <button
           className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg h-10"
-          /* onClick={handleSearch} */
+          // onClick={handleSearch} 
         >
           Search
-        </button>
+        </button> */}
       </div>
 
       <div className="">
