@@ -33930,10 +33930,11 @@ const ResContainer = ({ search })=>{
                     rating: restaurant.info.avgRating,
                     place: restaurant.info.areaName,
                     cuisines: restaurant.info.cuisines,
-                    imgId: restaurant.info.cloudinaryImageId
+                    imgId: restaurant.info.cloudinaryImageId,
+                    discount_info: restaurant.info.aggregatedDiscountInfoV3
                 }, void 0, false, {
                     fileName: "src/Components/ResContainer.js",
-                    lineNumber: 59,
+                    lineNumber: 61,
                     columnNumber: 13
                 }, undefined)
             }, restaurant.info.id, false, {
@@ -34179,17 +34180,38 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
-const ResCard = ({ id, name, rating, cuisines, place, imgId })=>{
+const ResCard = ({ id, name, rating, cuisines, place, imgId, discount_info })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "m-5 bg-white shadow-md rounded-lg flex flex-col w-80",
+        className: "  m-5 bg-white shadow-md rounded-lg flex flex-col w-80",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "object-cover w-full h-40 rounded-t-lg",
-                src: `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${imgId}`,
-                alt: "Food"
-            }, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "relative",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        className: "object-cover w-full h-40 rounded-t-lg",
+                        src: `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${imgId}`,
+                        alt: "Food"
+                    }, void 0, false, {
+                        fileName: "src/Components/ResCard.js",
+                        lineNumber: 17,
+                        columnNumber: 9
+                    }, undefined),
+                    discount_info && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "font-extrabold absolute  bottom-0  text-white tracking-tighter text-3xl uppercase p-2",
+                        children: [
+                            discount_info.header,
+                            " ",
+                            discount_info.subHeader
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Components/ResCard.js",
+                        lineNumber: 25,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/Components/ResCard.js",
-                lineNumber: 7,
+                lineNumber: 16,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34200,7 +34222,7 @@ const ResCard = ({ id, name, rating, cuisines, place, imgId })=>{
                         children: name
                     }, void 0, false, {
                         fileName: "src/Components/ResCard.js",
-                        lineNumber: 13,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -34211,7 +34233,7 @@ const ResCard = ({ id, name, rating, cuisines, place, imgId })=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/Components/ResCard.js",
-                        lineNumber: 14,
+                        lineNumber: 33,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -34219,7 +34241,7 @@ const ResCard = ({ id, name, rating, cuisines, place, imgId })=>{
                         children: cuisines.join(",")
                     }, void 0, false, {
                         fileName: "src/Components/ResCard.js",
-                        lineNumber: 15,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -34227,27 +34249,19 @@ const ResCard = ({ id, name, rating, cuisines, place, imgId })=>{
                         children: place
                     }, void 0, false, {
                         fileName: "src/Components/ResCard.js",
-                        lineNumber: 16,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/",
-                        children: "Click here"
-                    }, void 0, false, {
-                        fileName: "src/Components/ResCard.js",
-                        lineNumber: 17,
+                        lineNumber: 35,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/ResCard.js",
-                lineNumber: 12,
+                lineNumber: 31,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/ResCard.js",
-        lineNumber: 6,
+        lineNumber: 14,
         columnNumber: 5
     }, undefined);
 };

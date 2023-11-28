@@ -56,6 +56,8 @@ const ResContainer = ({ search }) => {
             to={`/restmenu/${restaurant.info.id}`}
             className="text-decoration-none"
           >
+            {/* {Array(10).fill(0).map((e) => (<h1>joggi</h1>))} */}
+            {/* {condition && (<div><h1>heyyyy</h1><p>Some other content</p> </div>)} */}
             <ResCard
               id={restaurant.info.id}
               name={restaurant.info.name}
@@ -63,6 +65,7 @@ const ResContainer = ({ search }) => {
               place={restaurant.info.areaName}
               cuisines={restaurant.info.cuisines}
               imgId={restaurant.info.cloudinaryImageId}
+              discount_info={restaurant.info.aggregatedDiscountInfoV3}
             />
           </Link>
         ))
