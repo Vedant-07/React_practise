@@ -34182,7 +34182,7 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
 const ResCard = ({ id, name, rating, cuisines, place, imgId, discount_info })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "  m-5 bg-white shadow-md rounded-lg flex flex-col w-80",
+        className: "  m-5 bg-white shadow-md rounded-lg flex flex-col w-80 transition-all hover:scale-90",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "relative",
@@ -34197,7 +34197,7 @@ const ResCard = ({ id, name, rating, cuisines, place, imgId, discount_info })=>{
                         columnNumber: 9
                     }, undefined),
                     discount_info && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "font-extrabold absolute  bottom-0  text-white tracking-tighter text-3xl uppercase p-2",
+                        className: "font-extrabold absolute  bottom-0  text-white tracking-tighter  text-3xl uppercase p-2",
                         children: [
                             discount_info.header,
                             " ",

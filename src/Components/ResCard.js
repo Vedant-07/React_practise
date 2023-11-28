@@ -11,7 +11,7 @@ const ResCard = ({
   discount_info,
 }) => {
   return (
-    <div className="  m-5 bg-white shadow-md rounded-lg flex flex-col w-80">
+    <div className="  m-5 bg-white shadow-md rounded-lg flex flex-col w-80 transition-all hover:scale-90">
       {/* Image Container */}
       <div className="relative">
         <img
@@ -22,7 +22,7 @@ const ResCard = ({
 
         {/* Discount Info Overlay */}
         {discount_info && (
-          <div className="font-extrabold absolute  bottom-0  text-white tracking-tighter text-3xl uppercase p-2">
+          <div className="font-extrabold absolute  bottom-0  text-white tracking-tighter  text-3xl uppercase p-2">
             {discount_info.header} {discount_info.subHeader}
           </div>
         )}
