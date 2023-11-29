@@ -476,6 +476,10 @@ img, video {
   padding-bottom: 1.5rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -489,11 +493,6 @@ img, video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .font-extrabold {
@@ -521,22 +520,6 @@ img, video {
   --tw-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.outline-1 {
-  outline-width: 1px;
-}
-
-.outline-2 {
-  outline-width: 2px;
-}
-
-.outline-4 {
-  outline-width: 4px;
-}
-
-.outline-8 {
-  outline-width: 8px;
 }
 
 .filter {

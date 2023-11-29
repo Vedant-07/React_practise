@@ -27569,34 +27569,76 @@ var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const RestMenu = ()=>{
     _s();
+    const [menu, setMenu] = (0, _react.useState)();
+    const [shimmerMenu, setShimmerMenu] = (0, _react.useState)(false);
+    //const [filtermenu,usefilter]
     const { resId } = (0, _reactRouterDom.useParams)();
     (0, _react.useEffect)(()=>{
         fetchMenu();
     }, []);
     const fetchMenu = async ()=>{
-        const swiggy_api2 = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.3071588&lng=73.1812187&restaurantId=94892&catalog_qa=undefined&submitAction=ENTER";
+        const swiggy_api2 = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.3071588&lng=73.1812187&restaurantId=" + resId + "&catalog_qa=undefined&submitAction=ENTER";
         const data = await fetch(swiggy_api2);
         const json = await data.json();
+        console.log("from here");
         console.log(json);
+        const menuData = json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards || [];
+        // Filter and set the menu in one line
+        console.log(Array.isArray(menuData));
+        setMenu(menuData.filter((men)=>men.card.card["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"));
+        /* setMenu(
+      [...menu].filter((men) => {
+        men.card.card["@type"] ==
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
+      }) */ setShimmerMenu(true);
+        console.log("here part 2");
+        console.log(menu);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            console.log("here ia hrer"),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    "RestMenu",
-                    resId
-                ]
-            }, void 0, true, {
-                fileName: "src/Components/RestMenu.js",
-                lineNumber: 22,
-                columnNumber: 7
-            }, undefined),
-            ";"
-        ]
-    }, void 0, true);
+        children: !shimmerMenu ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            children: "Shimmer for menu here"
+        }, void 0, false, {
+            fileName: "src/Components/RestMenu.js",
+            lineNumber: 49,
+            columnNumber: 9
+        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: menu.map((item, key)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "text-center",
+                    children: [
+                        item.card.card.title,
+                        item.card.card.itemCards.map((itx, key)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                children: [
+                                    " ",
+                                    "Item:",
+                                    itx.card.info.name,
+                                    " price:",
+                                    itx.card.info.price ? itx.card.info.price / 100 : itx.card.info.defaultPrice / 100,
+                                    " "
+                                ]
+                            }, itx.card.info.id, true, {
+                                fileName: "src/Components/RestMenu.js",
+                                lineNumber: 56,
+                                columnNumber: 17
+                            }, undefined)),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                            fileName: "src/Components/RestMenu.js",
+                            lineNumber: 64,
+                            columnNumber: 15
+                        }, undefined)
+                    ]
+                }, key, true, {
+                    fileName: "src/Components/RestMenu.js",
+                    lineNumber: 53,
+                    columnNumber: 13
+                }, undefined))
+        }, void 0, false, {
+            fileName: "src/Components/RestMenu.js",
+            lineNumber: 51,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false);
 };
-_s(RestMenu, "FudraO3AYWmP8DTeCUuHl6Y9Mb8=", false, function() {
+_s(RestMenu, "EbUag5ZnGiQFlVEPwadh0BIyolY=", false, function() {
     return [
         (0, _reactRouterDom.useParams)
     ];
