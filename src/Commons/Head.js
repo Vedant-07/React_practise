@@ -2,8 +2,14 @@ import React, { useContext } from "react";
 import logo from "../../utilities/img/eat_out.png";
 import { Link } from "react-router-dom";
 import UserContext from "../../utilities/UserContext";
+import { useSelector } from "react-redux";
+
 const Head = () => {
   const { loggedInUser } = useContext(UserContext);
+  //subscriobing to strore using selectore
+  const cartItems = useSelector((store) => store.cart.items);
+  // cart constains store items
+  console.log(cartItems);
   return (
     <>
       <div className="flex px-4 bg-slate-900 text-white justify-between ">
@@ -20,7 +26,7 @@ const Head = () => {
           <div>
             <div>Username:{loggedInUser}</div>
           </div>
-          <div>Items 0</div>
+          <div>Items {cartItems.length}</div>
 
           <div>Sign in</div>
           <div>

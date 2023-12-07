@@ -18,7 +18,7 @@ const Welcome = () => {
         <div className="ml-3">
           <input
             type="text"
-            placeholder={loggedInUser}
+            placeholder="enter your name here"
             value={name} // Controlled input value from state
             className="border border-gray-400 rounded-md p-1"
             onChange={(e) => {
