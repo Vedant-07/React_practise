@@ -23,6 +23,9 @@ const Head = () => {
           <div>Items 0</div>
 
           <div>Sign in</div>
+          <div>
+            <Link to="/about">About</Link>
+          </div>
         </div>
       </div>
     </>

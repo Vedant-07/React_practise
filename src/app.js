@@ -18,6 +18,10 @@ import Welcome from "./Components/Welcome";
 import RestMenu from "./Components/RestMenu";
 import UserContext from "../utilities/UserContext";
 
+import { Suspense, lazy } from "react";
+
+const About = React.lazy(() => import("./Components/About"));
+
 const AppLayout = () => {
   const [userName, setUserName] = useState("default user");
   useEffect(() => {
@@ -61,6 +65,23 @@ const routes = [
       {
         path: "/restmenu/:resId/",
         element: <RestMenu />,
+      },
+      {
+        path: "/about",
+
+        element: (
+          <Suspense
+            fallback="<div> Its about us loaging by Lazy....................................................
+          sddsdassaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          sadsdddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+          saddddddddddddddddddddddddddddddd
+          adssadddddddddddddddddddddddddddddddddddddddddd
+          dsdssaddddddddddddddddddadsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssd
+          sda </div>"
+          >
+            <About />
+          </Suspense>
+        ),
       },
     ],
     errorElement: <ErrorPage />,

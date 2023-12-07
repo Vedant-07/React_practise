@@ -2965,6 +2965,8 @@ var _restMenuDefault = parcelHelpers.interopDefault(_restMenu);
 var _userContext = require("../utilities/UserContext");
 var _userContextDefault = parcelHelpers.interopDefault(_userContext);
 var _s = $RefreshSig$();
+const About = /*#__PURE__*/ (0, _reactDefault.default).lazy(()=>require("f17417b241bb5a36"));
+_c = About;
 const AppLayout = ()=>{
     _s();
     const [userName, setUserName] = (0, _react.useState)("default user");
@@ -2983,7 +2985,7 @@ const AppLayout = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 33,
+                    lineNumber: 37,
                     columnNumber: 9
                 }, undefined),
                 console.log((0, _restMenuDefault.default)),
@@ -2991,39 +2993,39 @@ const AppLayout = ()=>{
                     className: "flex-grow",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 36,
+                        lineNumber: 40,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 35,
+                    lineNumber: 39,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 38,
+                    lineNumber: 42,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/App.js",
-            lineNumber: 32,
+            lineNumber: 36,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/App.js",
-        lineNumber: 31,
+        lineNumber: 35,
         columnNumber: 5
     }, undefined);
 };
 _s(AppLayout, "If5U4n/BmQEyk8mvWUvsq8nL+6o=");
-_c = AppLayout;
+_c1 = AppLayout;
 const routes = [
     {
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 47,
+            lineNumber: 51,
             columnNumber: 14
         }, undefined),
         children: [
@@ -3031,7 +3033,7 @@ const routes = [
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _welcomeDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 51,
+                    lineNumber: 55,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3039,7 +3041,7 @@ const routes = [
                 path: "/body",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 55,
+                    lineNumber: 59,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3047,7 +3049,7 @@ const routes = [
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 59,
+                    lineNumber: 63,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3055,14 +3057,29 @@ const routes = [
                 path: "/restmenu/:resId/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restMenuDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 63,
+                    lineNumber: 67,
                     columnNumber: 18
+                }, undefined)
+            },
+            {
+                path: "/about",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
+                    fallback: "<div> Its about us loaging by Lazy....................................................   sddsdassaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa   sadsdddddddddddddddddddddddddddddddddddddddddddddddddddddddd   saddddddddddddddddddddddddddddddd   adssadddddddddddddddddddddddddddddddddddddddddd   dsdssaddddddddddddddddddadsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssd   sda </div>",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(About, {}, void 0, false, {
+                        fileName: "src/App.js",
+                        lineNumber: 82,
+                        columnNumber: 13
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 73,
+                    columnNumber: 11
                 }, undefined)
             }
         ],
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorPageDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 66,
+            lineNumber: 87,
             columnNumber: 19
         }, undefined)
     }
@@ -3073,18 +3090,19 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 74,
+    lineNumber: 95,
     columnNumber: 13
 }, undefined));
-var _c;
-$RefreshReg$(_c, "AppLayout");
+var _c, _c1;
+$RefreshReg$(_c, "About");
+$RefreshReg$(_c1, "AppLayout");
 
   $parcel$ReactRefreshHelpers$f00f.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom/client":"lOjBx","./Components/RestMenu":"lpEV6","react-router-dom":"9xmpe","./Commons/Head":"6cXMR","./Commons/Footer":"kOJuW","./Components/Body":"6J35F","./Components/ErrorPage":"8Up4E","./Components/Contact":"66EYZ","./Components/Welcome":"eOAt6","../utilities/UserContext":"ji8Y1"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom/client":"lOjBx","./Components/RestMenu":"lpEV6","react-router-dom":"9xmpe","./Commons/Head":"6cXMR","./Commons/Footer":"kOJuW","./Components/Body":"6J35F","./Components/ErrorPage":"8Up4E","./Components/Contact":"66EYZ","./Components/Welcome":"eOAt6","../utilities/UserContext":"ji8Y1","f17417b241bb5a36":"Yn6sE"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -33507,6 +33525,20 @@ const Head = ()=>{
                             fileName: "src/Commons/Head.js",
                             lineNumber: 25,
                             columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/about",
+                                children: "About"
+                            }, void 0, false, {
+                                fileName: "src/Commons/Head.js",
+                                lineNumber: 27,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/Commons/Head.js",
+                            lineNumber: 26,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
@@ -34454,6 +34486,74 @@ $RefreshReg$(_c, "Welcome");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utilities/UserContext":"ji8Y1"}]},["hcwwj","1xC6H","2kQhy"], "2kQhy", "parcelRequire7911")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utilities/UserContext":"ji8Y1"}],"Yn6sE":[function(require,module,exports) {
+module.exports = require("5ce6a0f16367bb1d")(require("b82f10e43bf97a1d").getBundleURL("aXMci") + "About.3f2e41a3.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("19tXb"));
+
+},{"5ce6a0f16367bb1d":"61B45","b82f10e43bf97a1d":"lgJ39"}],"61B45":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require("ca2a84f7fa4a3bb0");
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same script twice (e.g. if it was already in the HTML)
+        var existingScripts = document.getElementsByTagName("script");
+        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
+            return script.src === bundle;
+        })) {
+            resolve();
+            return;
+        }
+        var preloadLink = document.createElement("link");
+        preloadLink.href = bundle;
+        preloadLink.rel = "preload";
+        preloadLink.as = "script";
+        document.head.appendChild(preloadLink);
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = bundle;
+        script.onerror = function(e) {
+            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
+            script.onerror = script.onload = null;
+            script.remove();
+            reject(error);
+        };
+        script.onload = function() {
+            script.onerror = script.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+    });
+});
+
+},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
+"use strict";
+var cachedBundles = {};
+var cachedPreloads = {};
+var cachedPrefetches = {};
+function getCache(type) {
+    switch(type){
+        case "preload":
+            return cachedPreloads;
+        case "prefetch":
+            return cachedPrefetches;
+        default:
+            return cachedBundles;
+    }
+}
+module.exports = function(loader, type) {
+    return function(bundle) {
+        var cache = getCache(type);
+        if (cache[bundle]) return cache[bundle];
+        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
+            delete cache[bundle];
+            throw e;
+        });
+    };
+};
+
+},{}]},["hcwwj","1xC6H","2kQhy"], "2kQhy", "parcelRequire7911")
 
 //# sourceMappingURL=index.7271efb6.js.map
