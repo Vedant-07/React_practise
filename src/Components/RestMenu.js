@@ -54,11 +54,10 @@ const RestMenu = () => {
               {item.card.card.title}
               {item.card.card.itemCards.map((itx, key) => (
                 <div key={itx.card.info.id}>
-                  {" "}
-                  Item:{itx.card.info.name} price:
+                  {itx.card.info.name} ------
                   {itx.card.info.price
                     ? itx.card.info.price / 100
-                    : itx.card.info.defaultPrice / 100}{" "}
+                    : itx.card.info.defaultPrice / 100}
                 </div>
               ))}
               <hr />

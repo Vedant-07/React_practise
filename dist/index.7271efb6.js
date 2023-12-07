@@ -2962,47 +2962,68 @@ var _welcome = require("./Components/Welcome");
 var _welcomeDefault = parcelHelpers.interopDefault(_welcome);
 var _restMenu = require("./Components/RestMenu");
 var _restMenuDefault = parcelHelpers.interopDefault(_restMenu);
+var _userContext = require("../utilities/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _s = $RefreshSig$();
 const AppLayout = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-col h-screen",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headDefault.default), {}, void 0, false, {
-                fileName: "src/App.js",
-                lineNumber: 23,
-                columnNumber: 7
-            }, undefined),
-            console.log((0, _restMenuDefault.default)),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex-grow",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
+    _s();
+    const [userName, setUserName] = (0, _react.useState)("default user");
+    (0, _react.useEffect)(()=>{
+        /* setTimeout(() => {
+      setUserName("Vedant");
+    }, 3000); */ setUserName("Vedant");
+    }, []);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userContextDefault.default).Provider, {
+        value: {
+            loggedInUser: userName,
+            setUserName
+        },
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "flex flex-col h-screen",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 26,
+                    lineNumber: 33,
+                    columnNumber: 9
+                }, undefined),
+                console.log((0, _restMenuDefault.default)),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "flex-grow",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
+                        fileName: "src/App.js",
+                        lineNumber: 36,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 35,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 38,
                     columnNumber: 9
                 }, undefined)
-            }, void 0, false, {
-                fileName: "src/App.js",
-                lineNumber: 25,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
-                fileName: "src/App.js",
-                lineNumber: 28,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
+            ]
+        }, void 0, true, {
+            fileName: "src/App.js",
+            lineNumber: 32,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
         fileName: "src/App.js",
-        lineNumber: 22,
+        lineNumber: 31,
         columnNumber: 5
     }, undefined);
 };
+_s(AppLayout, "If5U4n/BmQEyk8mvWUvsq8nL+6o=");
 _c = AppLayout;
 const routes = [
     {
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 36,
+            lineNumber: 47,
             columnNumber: 14
         }, undefined),
         children: [
@@ -3010,7 +3031,7 @@ const routes = [
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _welcomeDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 40,
+                    lineNumber: 51,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3018,7 +3039,7 @@ const routes = [
                 path: "/body",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 44,
+                    lineNumber: 55,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3026,7 +3047,7 @@ const routes = [
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 48,
+                    lineNumber: 59,
                     columnNumber: 18
                 }, undefined)
             },
@@ -3034,14 +3055,14 @@ const routes = [
                 path: "/restmenu/:resId/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restMenuDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 52,
+                    lineNumber: 63,
                     columnNumber: 18
                 }, undefined)
             }
         ],
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorPageDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 55,
+            lineNumber: 66,
             columnNumber: 19
         }, undefined)
     }
@@ -3052,146 +3073,9 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 63,
+    lineNumber: 74,
     columnNumber: 13
-}, undefined)); // App.js or relevant file
- /* import React from "react";
-import ReactDOM from "react-dom/client";
-import RestMenu from "./Components/RestMenu"; // Ensure correct import path
-
-const App = () => {
-  return (
-    <div>
-      <RestMenu />
-      
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
- */  /***
- * import React from "react";
-import ReactDOM from "react-dom/client";
-
-import {
-  Link,
-  Outlet,
-  createBrowserRouter,
-  RouterProvider,
-  errorRoute,
-} from "react-router-dom";
-import Head from "./Commons/Head";
-import Footer from "./Commons/Footer";
-import Body from "./Components/Body";
-import ErrorPage from "./Components/ErrorPage";
-import Contact from "./Components/Contact";
-import Welcome from "./Components/Welcome";
-/*
-          errorElement: Handles general or global errors across all routes in your application, acting as a fallback for any unhandled errors.
-errorRoute: Specifically handles errors occurring within a defined route, providing an alternative route or component to render when an error occurs in that particular route.
-          
-//this errorRoute is kind of specific
-//errorRoute:<ErrorPage/>
-const AppLayout = () => {
-  return (
-    <div className="flex flex-col h-screen">
-      <Head />
-      <div className="flex-grow">
-        <Outlet />
-      </div>
-      <Footer />
-    </div>
-  );
-};
-
-/*  const appRouter = createBrowserRouter([
-    {
-      path:'',
-      element:(
-      <>
-      <Head/>
-      <Outlet/>
-      <Footer/>
-      </>
-      ),
-      children:[
-        {
-          path:'',
-          element:<Welcome/>
-        },
-        {
-          path:'body',
-          element:<Body/>
-        },
-        {
-          path:'/contact',
-          element:<Contact/>,
-         
-        }
-      ],
-      errorElement:<ErrorPage/>
-    }
-  ]) 
-
-const appRouter = createBrowserRouter([
-  {
-    path: "/", // show path for routing
-    element: <AppLayout />, // show component for particular path
-    errorElement: <ErrorPage />, // show error component for path is different
-    children: [
-      // show children component for routing
-      {
-        path: "/",
-        element: <Welcome />,
-      },
-      {
-        path: "/body",
-        element: <Body />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-    ],
-  },
-]);
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} />);
- * 
- */  /**
- * <Main Page>
- * Header
- *  logo
- *  eat-out
- *  contact us
- *  items in cart
- *  sign in
- * Body-container
- *  search
- *  rest-container
- *      rest. card
- *          img
- *          name of rest.
- *          ratings
- *          cuisines
- *          place
- * Footer
- *  various links
- *  Copyright
- *  addresses
- *
- *
- *
- * <rest-card-page>
- *  rest-items
- *  add to cart
- *
- *
- * <payments>
- *
- */ 
+}, undefined));
 var _c;
 $RefreshReg$(_c, "AppLayout");
 
@@ -3200,7 +3084,7 @@ $RefreshReg$(_c, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom/client":"lOjBx","./Components/RestMenu":"lpEV6","react-router-dom":"9xmpe","./Commons/Head":"6cXMR","./Commons/Footer":"kOJuW","./Components/Body":"6J35F","./Components/ErrorPage":"8Up4E","./Components/Contact":"66EYZ","./Components/Welcome":"eOAt6"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom/client":"lOjBx","./Components/RestMenu":"lpEV6","react-router-dom":"9xmpe","./Commons/Head":"6cXMR","./Commons/Footer":"kOJuW","./Components/Body":"6J35F","./Components/ErrorPage":"8Up4E","./Components/Contact":"66EYZ","./Components/Welcome":"eOAt6","../utilities/UserContext":"ji8Y1"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27608,12 +27492,9 @@ const RestMenu = ()=>{
                         item.card.card.title,
                         item.card.card.itemCards.map((itx, key)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 children: [
-                                    " ",
-                                    "Item:",
                                     itx.card.info.name,
-                                    " price:",
-                                    itx.card.info.price ? itx.card.info.price / 100 : itx.card.info.defaultPrice / 100,
-                                    " "
+                                    " ------",
+                                    itx.card.info.price ? itx.card.info.price / 100 : itx.card.info.defaultPrice / 100
                                 ]
                             }, itx.card.info.id, true, {
                                 fileName: "src/Components/RestMenu.js",
@@ -27622,7 +27503,7 @@ const RestMenu = ()=>{
                             }, undefined)),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                             fileName: "src/Components/RestMenu.js",
-                            lineNumber: 64,
+                            lineNumber: 63,
                             columnNumber: 15
                         }, undefined)
                     ]
@@ -33537,7 +33418,12 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _eatOutPng = require("../../utilities/img/eat_out.png");
 var _eatOutPngDefault = parcelHelpers.interopDefault(_eatOutPng);
 var _reactRouterDom = require("react-router-dom");
+var _userContext = require("../../utilities/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _s = $RefreshSig$();
 const Head = ()=>{
+    _s();
+    const { loggedInUser } = (0, _react.useContext)((0, _userContextDefault.default));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "flex px-4 bg-slate-900 text-white justify-between ",
@@ -33550,12 +33436,12 @@ const Head = ()=>{
                         className: "h-16 p-3"
                     }, void 0, false, {
                         fileName: "src/Commons/Head.js",
-                        lineNumber: 10,
+                        lineNumber: 11,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/Commons/Head.js",
-                    lineNumber: 9,
+                    lineNumber: 10,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -33568,14 +33454,14 @@ const Head = ()=>{
                                     children: "Home"
                                 }, void 0, false, {
                                     fileName: "src/Commons/Head.js",
-                                    lineNumber: 14,
+                                    lineNumber: 15,
                                     columnNumber: 13
                                 }, undefined),
                                 " "
                             ]
                         }, void 0, true, {
                             fileName: "src/Commons/Head.js",
-                            lineNumber: 13,
+                            lineNumber: 14,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -33584,42 +33470,59 @@ const Head = ()=>{
                                 children: " Contact"
                             }, void 0, false, {
                                 fileName: "src/Commons/Head.js",
-                                lineNumber: 17,
+                                lineNumber: 18,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Commons/Head.js",
-                            lineNumber: 16,
+                            lineNumber: 17,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                children: [
+                                    "Username:",
+                                    loggedInUser
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Commons/Head.js",
+                                lineNumber: 21,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/Commons/Head.js",
+                            lineNumber: 20,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             children: "Items 0"
                         }, void 0, false, {
                             fileName: "src/Commons/Head.js",
-                            lineNumber: 19,
+                            lineNumber: 23,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             children: "Sign in"
                         }, void 0, false, {
                             fileName: "src/Commons/Head.js",
-                            lineNumber: 21,
+                            lineNumber: 25,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Commons/Head.js",
-                    lineNumber: 12,
+                    lineNumber: 13,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Commons/Head.js",
-            lineNumber: 8,
+            lineNumber: 9,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
 };
+_s(Head, "YMrbut4/95PY8g/J6/dTj+Ex8sk=");
 _c = Head;
 exports.default = Head;
 var _c;
@@ -33630,7 +33533,7 @@ $RefreshReg$(_c, "Head");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../utilities/img/eat_out.png":"T9j3X","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"T9j3X":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../utilities/img/eat_out.png":"T9j3X","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utilities/UserContext":"ji8Y1"}],"T9j3X":[function(require,module,exports) {
 module.exports = require("a139be4f4fdf6622").getBundleURL("aXMci") + "eat_out.8d65afe4.png" + "?" + Date.now();
 
 },{"a139be4f4fdf6622":"lgJ39"}],"lgJ39":[function(require,module,exports) {
@@ -33668,7 +33571,27 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"kOJuW":[function(require,module,exports) {
+},{}],"ji8Y1":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6857 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6857.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+const UserContext = /*#__PURE__*/ (0, _react.createContext)({
+    loggedInUser: "Arjun"
+});
+exports.default = UserContext;
+
+  $parcel$ReactRefreshHelpers$6857.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kOJuW":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e1be = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -33680,7 +33603,12 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _userContext = require("../../utilities/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _s = $RefreshSig$();
 const Footer = ()=>{
+    _s();
+    let { loggedInUser } = (0, _react.useContext)((0, _userContextDefault.default));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "  mt-auto bg-gray-900 text-white py-4 px-5 flex space-x-32  ",
         children: [
@@ -33693,25 +33621,25 @@ const Footer = ()=>{
                             children: "here 1"
                         }, void 0, false, {
                             fileName: "src/Commons/Footer.js",
-                            lineNumber: 9,
+                            lineNumber: 11,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "here 2"
                         }, void 0, false, {
                             fileName: "src/Commons/Footer.js",
-                            lineNumber: 10,
+                            lineNumber: 12,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Commons/Footer.js",
-                    lineNumber: 7,
+                    lineNumber: 9,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Commons/Footer.js",
-                lineNumber: 6,
+                lineNumber: 8,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -33723,25 +33651,25 @@ const Footer = ()=>{
                             children: "here 1"
                         }, void 0, false, {
                             fileName: "src/Commons/Footer.js",
-                            lineNumber: 16,
+                            lineNumber: 18,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "here 2"
                         }, void 0, false, {
                             fileName: "src/Commons/Footer.js",
-                            lineNumber: 17,
+                            lineNumber: 19,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Commons/Footer.js",
-                    lineNumber: 14,
+                    lineNumber: 16,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Commons/Footer.js",
-                lineNumber: 13,
+                lineNumber: 15,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -33753,34 +33681,42 @@ const Footer = ()=>{
                             children: "here 1"
                         }, void 0, false, {
                             fileName: "src/Commons/Footer.js",
-                            lineNumber: 23,
+                            lineNumber: 25,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "here 2"
                         }, void 0, false, {
                             fileName: "src/Commons/Footer.js",
-                            lineNumber: 24,
+                            lineNumber: 26,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: loggedInUser
+                        }, void 0, false, {
+                            fileName: "src/Commons/Footer.js",
+                            lineNumber: 27,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Commons/Footer.js",
-                    lineNumber: 21,
+                    lineNumber: 23,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Commons/Footer.js",
-                lineNumber: 20,
+                lineNumber: 22,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Commons/Footer.js",
-        lineNumber: 5,
+        lineNumber: 7,
         columnNumber: 5
     }, undefined);
 };
+_s(Footer, "YMrbut4/95PY8g/J6/dTj+Ex8sk=");
 _c = Footer;
 exports.default = Footer;
 var _c;
@@ -33791,7 +33727,7 @@ $RefreshReg$(_c, "Footer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6J35F":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utilities/UserContext":"ji8Y1"}],"6J35F":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4f14 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34445,18 +34381,69 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _userContext = require("../../utilities/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _s = $RefreshSig$();
 const Welcome = ()=>{
+    _s();
+    const { loggedInUser, setUserName } = (0, _react.useContext)((0, _userContextDefault.default));
+    const [name, setName] = (0, _react.useState)("");
+    const changeUser = ()=>{
+        setUserName(name);
+        setName(""); // Clearing the input field after submitting
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: " h-full bg-slate-400",
-            children: "Welcome"
-        }, void 0, false, {
+            className: "h-full bg-slate-400 flex p-4",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "my-1",
+                    children: " Welcome "
+                }, void 0, false, {
+                    fileName: "src/Components/Welcome.js",
+                    lineNumber: 16,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "ml-3",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                            type: "text",
+                            placeholder: loggedInUser,
+                            value: name,
+                            className: "border border-gray-400 rounded-md p-1",
+                            onChange: (e)=>{
+                                setName(e.target.value);
+                            }
+                        }, void 0, false, {
+                            fileName: "src/Components/Welcome.js",
+                            lineNumber: 19,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            onClick: changeUser,
+                            className: "ml-1 p-1 bg-blue-500 text-white rounded-md",
+                            children: "Submit"
+                        }, void 0, false, {
+                            fileName: "src/Components/Welcome.js",
+                            lineNumber: 28,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Components/Welcome.js",
+                    lineNumber: 18,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
             fileName: "src/Components/Welcome.js",
-            lineNumber: 6,
+            lineNumber: 15,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
 };
+_s(Welcome, "WsuD0HMaKXJ3pEIVMI80hfwu9fo=");
 _c = Welcome;
 exports.default = Welcome;
 var _c;
@@ -34467,6 +34454,6 @@ $RefreshReg$(_c, "Welcome");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["hcwwj","1xC6H","2kQhy"], "2kQhy", "parcelRequire7911")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utilities/UserContext":"ji8Y1"}]},["hcwwj","1xC6H","2kQhy"], "2kQhy", "parcelRequire7911")
 
 //# sourceMappingURL=index.7271efb6.js.map

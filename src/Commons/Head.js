@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../utilities/img/eat_out.png";
 import { Link } from "react-router-dom";
-
+import UserContext from "../../utilities/UserContext";
 const Head = () => {
+  const { loggedInUser } = useContext(UserContext);
   return (
     <>
       <div className="flex px-4 bg-slate-900 text-white justify-between ">
@@ -15,6 +16,9 @@ const Head = () => {
           </div>
           <div>
             <Link to="/contact"> Contact</Link>
+          </div>
+          <div>
+            <div>Username:{loggedInUser}</div>
           </div>
           <div>Items 0</div>
 
